@@ -8,7 +8,7 @@ module.exports ={
 	],
 	produtos:[
 		{frutas:[
-			{"nome":"banana","valor":"2.00","status":"ativo"},
+			{"nome":"banana", "valor":"2.00", "status": "ativo"},
 			{"nome": "uva", "valor":"1.80", "status": "inativo"},
 			{"nome": "morango", "valor":"5.00", "status": "ativo"},
 			{"nome": "melancia", "valor":"5.99", "status": "ativo"}

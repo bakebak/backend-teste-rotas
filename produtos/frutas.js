@@ -1,34 +1,41 @@
 var express = require('express');
 var fruits = express();
 
+var contact = require('./../contact.js');
+
 fruits.use(function timeLog(req, res, next){
 	console.log('Time: ', Date.now());
 	next();
 });
 
-fruits.get('/', function(req, res){
+/*fruits.get('/', function(req, res){
 	res.type('text/json');
 	res.send({frutas:["banana", "uva", "morango", "melancia"]});
+});*/
+
+fruits.get('/', function(req, res){
+	res.type('text/json');
+	res.send(contact.produtos[0]);
 });
 
 fruits.get('/banana', function(req, res){
 	res.type('text/json')
-	res.send({"nome": "banana", "valor":"2.00", "status": "ativo"});
+	res.send(contact.produtos[0].frutas[0]);
 });
 
 fruits.get('/uva', function(req, res){
 	res.type('text/json')
-	res.send({"nome": "uva", "valor":"1.80", "status": "inativo"});
+	res.send(contact.produtos[0].frutas[1]);
 });
 
 fruits.get('/morango', function(req, res){
 	res.type('text/json')
-	res.send({"nome": "morango", "valor":"5.00", "status": "ativo"});
+	res.send(contact.produtos[0].frutas[2]);
 });
 
 fruits.get('/melancia', function(req, res){
 	res.type('text/json')
-	res.send({"nome": "melancia", "valor":"5.99", "status": "ativo"});
+	res.send(contact.produtos[0].frutas[3]);
 });
 
 module.exports = fruits;
